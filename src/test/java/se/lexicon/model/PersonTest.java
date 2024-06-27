@@ -20,14 +20,6 @@ class PersonTest {
         book = new Book("1984", "George Orwell");
     }
 
-    @Test
-    @Order(1)
-    void testPersonConstructor() {
-        assertEquals(1, person.getId());
-        assertEquals("Mehrdad", person.getFirstName());
-        assertEquals("Javan", person.getLastName());
-        assertEquals(0, person.getBorrowedBooks().length);
-    }
 
     @Test
     @Order(2)

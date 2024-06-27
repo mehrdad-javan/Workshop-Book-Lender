@@ -22,7 +22,7 @@ class PersonTest {
 
 
     @Test
-    @Order(2)
+    @Order(1)
     void testSetFirstName() {
         person.setFirstName("Mehrdad");
         assertEquals("Mehrdad", person.getFirstName());
@@ -31,7 +31,7 @@ class PersonTest {
     }
 
     @Test
-    @Order(3)
+    @Order(2)
     void testSetLastName() {
         person.setLastName("Javan");
         assertEquals("Javan", person.getLastName());
@@ -40,7 +40,7 @@ class PersonTest {
     }
 
     @Test
-    @Order(4)
+    @Order(3)
     void testLoanBook() {
         person.loanBook(book);
         assertFalse(book.isAvailable());
@@ -50,14 +50,14 @@ class PersonTest {
     }
 
     @Test
-    @Order(5)
+    @Order(4)
     void testLoanBookWhenNotAvailable() {
         book.setBorrower(new Person("Jane", "Doe"));
         assertThrows(IllegalArgumentException.class, () -> person.loanBook(book));
     }
 
     @Test
-    @Order(6)
+    @Order(5)
     void testReturnBook() {
         person.loanBook(book);
         person.returnBook(book);
@@ -67,7 +67,7 @@ class PersonTest {
     }
 
     @Test
-    @Order(7)
+    @Order(6)
     void testReturnBookNotBorrowed() {
         assertThrows(IllegalArgumentException.class, () -> person.returnBook(null));
     }
